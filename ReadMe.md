@@ -1,6 +1,6 @@
 ## Robotic Ultrasound Calibration
 
-This document introduces our implementation of a novel ultrasound calibration algorithm for robotic systems. We've designed this code in C++ to optimize solver speed while making it available to the broader scientific community for potential improvements.
+This document introduces our implementation of a novel ultrasound calibration algorithm for robotic systems. We've designed this code in C++ to optimize solver speed (it takes 2 milliseconds to solve the optimization problem) while making it available to the broader scientific community for potential improvements.
 
 Additionally, we've developed a MATLAB wrapper through a MEX function to simplify prototyping for both commercial and non-commercial use. The function's API is straightforward:
 
@@ -48,6 +48,10 @@ cmake --build .
 ```
 
 These instructions are aimed at Windows, but the library should work on systems that support Ceres. After compiling, you can copy the CalibrationSolver.mexw64 file to the desired directory for MATLAB function calls. To use the library in C++ projects, link your project to the calibration_solver target in CMake.
+
+## Test
+
+Not everyone has a top of the art robotic system to test the algorithm, thus we supply a matlab script that generates a random trajectory and computes the intesection with the image plane to showcase the potential of the algorithm. 
 
 ## Known Limitations
 
