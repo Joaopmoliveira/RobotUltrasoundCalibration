@@ -69,4 +69,12 @@ The authors of Ceres provide clean APIs to manipulate and deal with hogomogeneou
 
 This library was developed to showcase our work to the scientific community. If you find this work useful in your own research, please cite our paper.
 
+@ARTICLE{Oliveira2023,
+  title = {Calibration Procedure for Robotic Ultrasound Systems},
+  author = {João Oliveira and Rui Coelho and Herculano Carvalho and Jorge Martins},
+  journal = { },
+  year = {2023},
+  month = {Oct}
+}
+
 
