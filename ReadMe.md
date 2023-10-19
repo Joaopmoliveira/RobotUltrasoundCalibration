@@ -36,7 +36,7 @@ Navigate to your vcpkg directory and execute the following command:
 vcpkg install ceres:x64-windows-static-md
 ```
 
->> Note: The 'md' flag is necessary because MATLAB uses dynamic linking, so we must also use dynamic linking for proper MEX code linking.
+> Note: The 'md' flag is necessary because MATLAB uses dynamic linking, so we must also use dynamic linking for proper MEX code linking.
 
 You also need the Visual Studio compiler, so please install the required tools. Once you have the compiler, you can open the bash window "x64 Native Tools Command Prompt for VS 2022" and perform the following steps:
 
@@ -53,7 +53,7 @@ These instructions are aimed at Windows, but the library should work on systems 
 
 Not everyone has a top of the art robotic system to test the algorithm, thus we supply a matlab script that generates a random trajectory and computes the intesection with the image plane to showcase the potential of the algorithm. 
 
->> Note: This step assumes that you have compiled the project in the proper directories, i.e. you should have a bin folder that contains the result of the compilation
+> Note: This step assumes that you have compiled the project in the proper directories, i.e. you should have a bin folder that contains the result of the compilation
 
 ```
 test_calibration
