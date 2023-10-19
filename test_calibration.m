@@ -156,7 +156,7 @@ indices = squeeze(sum(sum(data.W(:,:,:),1),2))~=inf;
 ImageData = data.W(:,:,indices);
 TransformData = data.T(1:3,:,indices);
 
-estimated_solution=CalibrationSolver(ImageData,TransformData);
+estimated_solution=CalibrationSolver(ImageData,TransformData,int32(100),solution.sol);
 
 fprintf("The true solution of the problem is: \n");
 for i = 1 : length(solution.sol)

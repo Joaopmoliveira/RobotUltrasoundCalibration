@@ -3,6 +3,6 @@
 
 #include <stdint.h>
  
-void cpp_solver_calibration(size_t n_wires, size_t max_iters, size_t n_observations,const double* images, const double* transformations, double* solution);
+void cpp_solver_calibration(int n_wires, int max_iters, int n_observations,const double* images, const double* transformations,double* initial_guess , double* solution);
 
 #endif

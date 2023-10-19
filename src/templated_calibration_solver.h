@@ -4,13 +4,13 @@
 #include <stdint.h>
 
 template<size_t n_wires>
-void templated_solver_calibration(size_t max_iters, size_t n_observations, const double* images, const double* transformations, double* solution) {
+void templated_solver_calibration(size_t max_iters, size_t n_observations, const double* images, const double* transformations,double* initial_guess, double* solution) {
 constexpr size_t number_of_strings = n_wires;
 constexpr size_t number_of_variables = 6 + 4 * number_of_strings;
 double variables[number_of_variables];
 
-for (auto& val : variables)
-val = 0.0;
+for(size_t n = 0; n < number_of_variables; ++n)
+    variables[n] = initial_guess[n];
 
 ceres::Problem problem;
 for (size_t observ = 0; observ < n_observations; ++observ,transformations+=3*4){
