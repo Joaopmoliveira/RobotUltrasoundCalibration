@@ -53,6 +53,14 @@ These instructions are aimed at Windows, but the library should work on systems 
 
 Not everyone has a top of the art robotic system to test the algorithm, thus we supply a matlab script that generates a random trajectory and computes the intesection with the image plane to showcase the potential of the algorithm. 
 
+>> Note: This step assumes that you have compiled the project in the proper directories, i.e. you should have a bin folder that contains the result of the compilation
+
+```
+test_calibration
+```
+
+This script plots the ultrasound images in 3D and prints the true solution and the estimated solution.
+
 ## Known Limitations
 
 The authors of Ceres provide clean APIs to manipulate and deal with hogomogeneous transformations which facilitate the Auto-Differentations funtionality through the Jet class (if you have not seen this and you are a C++ programmer, please see the source code of Jet, its a marvel to look at). We implemented the homogenenous transformations by hand, thus the source code could be significantly simplified if this alternative API was used. 
