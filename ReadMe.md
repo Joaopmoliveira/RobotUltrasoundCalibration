@@ -39,7 +39,7 @@ cmake . -DCMAKE_TOOLCHAIN_FILE="~path_to_vcpkg_direcoty\scripts\buildsystems\vcp
 cmake --build .
 ```
 
-Notice that although these instructions are targeted at windows, the library itself should mostly work on any system. Once this is done you can copy the CalibrationSolver.mexw64 file into any directory you wish the call the function from. 
+Notice that although these instructions are targeted at windows, the library itself should mostly work on any system which supports Ceres. Once this is done you can copy the CalibrationSolver.mexw64 file into any directory you wish the call the function from in Matlab. To use the library in your C++ projects, you can link your project to the calibration_solver target in CMake. 
 
 ## Citation
 

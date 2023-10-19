@@ -7,3 +7,4 @@ CMakeCache.txt
 .ninja_log
 build.ninja
 cmake_install.cmake
+/build
