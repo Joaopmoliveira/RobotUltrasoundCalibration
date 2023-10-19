@@ -38,14 +38,12 @@ vcpkg install ceres:x64-windows-static-md
 
 >> Note: The 'md' flag is necessary because MATLAB uses dynamic linking, so we must also use dynamic linking for proper MEX code linking.
 
-To compile the library source code, perform the following steps:
+You also need the Visual Studio compiler, so please install the required tools. Once you have the compiler, you can open the bash window "x64 Native Tools Command Prompt for VS 2022" and perform the following steps:
 
 ```bash
-git clone 
+git clone git@github.com:Joaopmoliveira/RobotUltrasoundCalibration.git
 cd RobotUltrasoundCalibration
-
 cmake . -DCMAKE_TOOLCHAIN_FILE="~path_to_vcpkg_direcoty\scripts\buildsystems\vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static-md -DCMAKE_BUILD_TYPE=Release -G "Ninja"
-
 cmake --build .
 ```
 
