@@ -17,6 +17,9 @@ Solution=CalibrationSolver(ImageData,TransformData);
 % The solution is a vector of size 6+n_wires*4. Usually only the homogenenous transformation between the flange and the origin of the 
 % ultrasound image is required, thus you just need to query the first 6 elements of the solution (the remaining ones correspond to the 
 % estimated pose of the wires as observed from the base frame). 
+
+% translation_image_to_flange = solution(4:6);
+% euler_angles_image_to_flange = solution(1:3);  
 ```
 
 The underlying solver currently makes no attempts to deal with observations with large noise, thus you must either implement an outer loop
