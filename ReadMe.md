@@ -1,8 +1,8 @@
 ## Robotic Ultrasound Calibration
 
-The present document showcases our implementation of the novel ultrasound calibration algorithm for robotic systems. We designed the code in C++ to improve the speed of the solver whilst AND provide the broader scientific community with our implementation in the hopes of obtaining further improvements. 
+This document introduces our implementation of a novel ultrasound calibration algorithm for robotic systems. We've designed this code in C++ to optimize solver speed while making it available to the broader scientific community for potential improvements.
 
-We also designed a wrapper for matlab, through a MEX function to simplify prototyping further downstream solutions both for commercial and non-commercial use. The API of the call is fairly simplistic
+Additionally, we've developed a MATLAB wrapper through a MEX function to simplify prototyping for both commercial and non-commercial use. The function's API is straightforward:
 
 ```matlab
 % ImageData array of size [3 n_wires n_observations] where each column represents the position of the wire in the image frame 
@@ -22,22 +22,25 @@ Solution=CalibrationSolver(ImageData,TransformData);
 % euler_angles_image_to_flange = solution(1:3);  
 ```
 
-The underlying solver currently makes no attempts to deal with observations with large noise, thus you must either implement an outer loop
-through a RANSAC approach or something simillar.
+Please note that the solver doesn't handle observations with substantial noise. You may need to implement an outer loop, such as a RANSAC approach, to address this issue.
 
 ## Build and Dependencies
 
-We have one major dependency in our code. The Ceres solver. To include it first install [vcpkg](https://vcpkg.io/en/) in your local machine.Once you have vcpkg please go to the directory of vcpkg and run the following command 
+Our code has one major dependency, the Ceres solver. To include it, follow these steps:
 
-```
+Install [vcpkg](https://vcpkg.io/en/) on your local machine.
+
+Navigate to your vcpkg directory and execute the following command:
+
+``` bash
 vcpkg install ceres:x64-windows-static-md
 ```
 
-*note : the md flang is required because in windows you can have dynamic or static linking to the c-library, and because matlab uses dynamic linking, then we must also use dynamic linking to properly compile the MEX code
+>> Note: The 'md' flag is necessary because MATLAB uses dynamic linking, so we must also use dynamic linking for proper MEX code linking.
 
-To compile the source code of the library please do the following. 
+To compile the library source code, perform the following steps:
 
-```
+```bash
 git clone 
 cd RobotUltrasoundCalibration
 
@@ -46,7 +49,7 @@ cmake . -DCMAKE_TOOLCHAIN_FILE="~path_to_vcpkg_direcoty\scripts\buildsystems\vcp
 cmake --build .
 ```
 
-Notice that although these instructions are targeted at windows, the library itself should mostly work on any system which supports Ceres. Once this is done you can copy the CalibrationSolver.mexw64 file into any directory you wish the call the function from in Matlab. To use the library in your C++ projects, you can link your project to the calibration_solver target in CMake. 
+These instructions are aimed at Windows, but the library should work on systems that support Ceres. After compiling, you can copy the CalibrationSolver.mexw64 file to the desired directory for MATLAB function calls. To use the library in C++ projects, link your project to the calibration_solver target in CMake.
 
 ## Known Limitations
 
@@ -54,6 +57,6 @@ The authors of Ceres provide clean APIs to manipulate and deal with hogomogeneou
 
 ## Citation
 
-This library was developed to showcase to the broader scientific community our paper, thus if you find this work noteworthy in your own scientific travels please cite us through
+This library was developed to showcase our work to the scientific community. If you find this work useful in your own research, please cite our paper.
 
 
