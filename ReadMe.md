@@ -41,6 +41,10 @@ cmake --build .
 
 Notice that although these instructions are targeted at windows, the library itself should mostly work on any system which supports Ceres. Once this is done you can copy the CalibrationSolver.mexw64 file into any directory you wish the call the function from in Matlab. To use the library in your C++ projects, you can link your project to the calibration_solver target in CMake. 
 
+## Known Limitations
+
+The authors of Ceres provide clean APIs to manipulate and deal with hogomogeneous transformations which facilitate the Auto-Differentations funtionality through the Jet class (if you have not seen this and you are a C++ programmer, please see the source code of Jet, its a marvel to look at). We implemented the homogenenous transformations by hand, thus the source code could be significantly simplified if this alternative API was used. 
+
 ## Citation
 
 This library was developed to showcase to the broader scientific community our paper, thus if you find this work noteworthy in your own scientific travels please cite us through
