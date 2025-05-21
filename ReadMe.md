@@ -84,5 +84,6 @@ This library was developed to showcase our work to the scientific community. If 
   keywords={Wire;Robots;Robot kinematics;Phantoms;Calibration;Ultrasonic imaging;Probes;Cost function;Vectors;Flanges;Image calibration;robotics;ultrasound;untracked phantom},
   doi={10.1109/TMRB.2025.3556549}}
 
+This calibration procedure is part of a larger project, focused on integrating robotic systems in the operating room, located at [Curan](https://github.com/Joaopmoliveira/CuranSDK).
 
 
