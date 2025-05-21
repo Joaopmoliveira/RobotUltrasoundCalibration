@@ -65,16 +65,24 @@ This script plots the ultrasound images in 3D and prints the true solution and t
 
 The authors of Ceres provide clean APIs to manipulate and deal with hogomogeneous transformations which facilitate the Auto-Differentations funtionality through the Jet class (if you have not seen this and you are a C++ programmer, please see the source code of Jet, its a marvel to look at). We implemented the homogenenous transformations by hand, thus the source code could be significantly simplified if this alternative API was used. 
 
+## Requests
+
+If you require an addition, such as a python interface, or a clearner and more compatible C++ interface, don't be afraid to request it.
+
 ## Citation
 
 This library was developed to showcase our work to the scientific community. If you find this work useful in your own research, please cite our paper.
 
-@article{ Oliveira2023,
-  title = {Calibration Procedure for Robotic Ultrasound Systems},
-  author = {João Oliveira and Rui Coelho and Herculano Carvalho and Jorge Martins},
-  journal = { },
-  year = {2023},
-  month = {Oct}
-}
+@ARTICLE{10947188,
+  author={Oliveira, João and Coelho, Rui Moura and Carvalho, Herculano and Martins, Jorge},
+  journal={IEEE Transactions on Medical Robotics and Bionics}, 
+  title={A Calibration Procedure for Robotic Ultrasound Systems}, 
+  year={2025},
+  volume={7},
+  number={2},
+  pages={793-801},
+  keywords={Wire;Robots;Robot kinematics;Phantoms;Calibration;Ultrasonic imaging;Probes;Cost function;Vectors;Flanges;Image calibration;robotics;ultrasound;untracked phantom},
+  doi={10.1109/TMRB.2025.3556549}}
+
 
 
